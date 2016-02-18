@@ -35,15 +35,6 @@ type ureg struct {
 	r14  uint32 /* ... */
 	r15  uint32 /* ... */
 	cpsr uint32 /* ... */
-
-	_type uint32
-	error uint32 /* error code (or zero) */
-	ip    uint32 /* pc */
-	cs    uint32 /* old context */
-	flags uint32 /* old flags */
-	sp    uint32 /* sp */
-	ss    uint32 /* old stack segment */
-
 }
 
 type sigctxt struct {
@@ -72,7 +63,8 @@ func dumpregs(u *ureg) {
 	print("r13    ", hex(u.r13), "\n")
 	print("r14    ", hex(u.r14), "\n")
 	print("r15    ", hex(u.r15), "\n")
-	print("ip", hex(u.ip), "\n")
-	print("sp", hex(u.sp), "\n")
+	print("cpsr", hex(u.cpsr), "\n")
+	//	print("ip", hex(u.ip), "\n")
+	//	print("sp", hex(u.sp), "\n")
 	//	print("flags ", hex(u.flags), "\n")
 }

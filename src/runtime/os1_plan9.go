@@ -200,7 +200,7 @@ func exit(e int) {
 // May run with m.p==nil, so write barriers are not allowed.
 //go:nowritebarrier
 func newosproc(mp *m, stk unsafe.Pointer) {
-	if false {
+	if true {
 		print("newosproc mp=", mp, " ostk=", &mp, "\n")
 	}
 	pid := rfork(_RFPROC | _RFMEM | _RFNOWAIT)
